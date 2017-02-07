@@ -112,6 +112,7 @@ module LibertyBuildpack::Framework
 
     def add_certificate(certificate, index)
       file = write_certificate certificate
+      puts "#{keytool} -importcert -noprompt -keystore #{trust_store} -storepass #{password} -file #{file.to_path} -alias certificate-#{index}"
       shell "#{keytool} -importcert -noprompt -keystore #{trust_store} -storepass #{password} -file #{file.to_path} -alias certificate-#{index}"
     end
 
