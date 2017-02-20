@@ -78,6 +78,7 @@ module LibertyBuildpack::Framework
 
       # place new relic resources in newrelic's home dir
       copy_agent_config(nr_home)
+      puts "-----> About to download the new relic agent"
       download_agent(@version, @uri, jar_name, nr_home)
     end
 
