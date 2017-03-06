@@ -105,8 +105,6 @@ module LibertyBuildpack::Jre
       @java_opts.concat default_dump_opts
       @java_opts << '-Xshareclasses:none'
       @java_opts << "-Xdump:tool:events=systhrow,filter=java/lang/OutOfMemoryError,request=serial+exclusive,exec=#{@common_paths.diagnostics_directory}/#{KILLJAVA_FILE_NAME}"
-      puts "##############################################################################################"
-      puts "#{@java_opts}-----------------------------------------------------"
     end
 
     # Prints a warning message if a memory limit of less than 512M has been chosen when using the IBM JDK.
