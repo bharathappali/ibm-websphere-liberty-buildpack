@@ -89,6 +89,8 @@ module LibertyBuildpack::Jre
         filename = File.basename(@uri)
         print "-----> Retrieving IBM #{@version} JRE (#{filename}) ... "
       end
+      puts "#{@configuration}"
+      puts "#{@configuration['heap_size_ratio']}"
       LibertyBuildpack::Util::Cache::ApplicationCache.new.get(@uri) do |file| # TODO: Use global cache
         puts "(#{(Time.now - download_start_time).duration})"
         expand file
